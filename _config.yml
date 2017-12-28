@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: "/"
-url: "https://rohanchandra.github.io/"
+baseurl: ""
+url: "https://hyungilahn2.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
