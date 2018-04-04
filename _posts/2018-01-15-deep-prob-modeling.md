@@ -11,7 +11,6 @@ Deep probabilistic programming can be characterized by approximate Bayesian infe
 
 Uber's Pyro framework emphasizes the following four characteristics of deep probabilistic programming.
 
-
 >- Why probabilistic modeling? To correctly capture uncertainty in models and predictions for unsupervised and semi-supervised learning, and to provide AI systems with declarative prior knowledge.
 >- Why (universal) probabilistic programs? To provide a clear and high-level, but complete, language for specifying complex models.
 >- Why deep probabilistic models? To learn generative knowledge from data and reify knowledge of how to do inference.
