@@ -2,6 +2,7 @@
 layout: post
 title: Deep Probabilistic Programming Combines Bayesian Inference and Deep Learning
 tags: Deep_Probabilistic_Programming
+comments: true
 ---
 
 *Deep probabilistic programming* is a method of implementing "Bayesian" probabilistic modeling on "differentiable" deep learning frameworks. This provides a style of language to define complex (composite, hierarchical) models with multiple components and incorporate probabilistic uncertainty about latent variables or model parameters into predictions.
@@ -298,7 +299,7 @@ $$
 -->
 
 
-In general, when the set of features we can use in modeling are:
+In general, when the set of features used in modeling are:
   * only the essential features
     - we tend to obtain a generalizable model with a good fit
   * all essential features + many irrelevant features
@@ -307,6 +308,8 @@ In general, when the set of features we can use in modeling are:
     - too simple model (underfit) and high model bias (model misspecification)
   * insufficient essential features + many irrelevant features
     - non-generalizable model with a bad fit
+
+
 
     <!---
     $$p(y' \mid \mathbf{x}', y, \mathbf{x}, \sigma_y^2, \sigma_w^2)
@@ -558,3 +561,10 @@ Setting $$g(Y_n,\mathbf{w})\equiv Y_n-\mu$$, $$W\equiv\Sigma$$, and taking the l
 }
 
 --->
+
+## References
+[1] https://eng.uber.com/pyro/
+
+[2]  https://www.facebook.com/yann.lecun/posts/10155003011462143
+
+[3] David MacKay. _Information Theory, Inference, and Learning Algorithms_.  http://www.inference.org.uk/mackay/Book.html

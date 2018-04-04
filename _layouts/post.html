@@ -17,9 +17,15 @@ layout: default
 <!-- Disqus -->
 {% if site.theme_settings.disqus_shortname %}
 <div class="comments">
+  {% if page.comments %}
+
   {% include disqus.html %}
+
+  {% endif %}
 </div>
 {% endif %}
+
+
 
 <!-- Post navigation -->
 {% if site.theme_settings.post_navigation %}

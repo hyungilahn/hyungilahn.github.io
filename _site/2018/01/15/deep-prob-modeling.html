@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="/assets/css/main.css">
 
 	<!--Favicon-->
-	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="/" type="image/x-icon">
 
 	<!-- Canonical -->
 	<link rel="canonical" href="/2018/01/15/deep-prob-modeling.html">
@@ -39,10 +39,6 @@
   <body>
     <header class="site-header">
 	<div class="branding">
-		
-		<a href="/">
-			<img class="avatar" src="/assets/img/avatar.png" alt=""/>
-		</a>
 		
 		<h1 class="site-title">
 			<a href="/">Hyungil Ahn</a>
@@ -77,9 +73,17 @@
 			</li>
 			
 			
+			
+			
 			<!-- Social icons from Font Awesome, if enabled  -->
 			
 
+
+<li>
+	<a href="mailto:hyungil@gmail.com" title="Email">
+		<i class="fa fa-fw fa-envelope"></i>
+	</a>
+</li>
 
 
 
@@ -383,8 +387,6 @@ the prior <script type="math/tex">p(\mathbf{w} \mid \sigma_w^2)</script> by <scr
 \big[
 \log p(D|\mathbf{w},\beta, \mathcal{H})]</script> motivates the distribution <script type="math/tex">q(\mathbf{w}|\lambda)</script> to concentrate on the <script type="math/tex">\mathbf{w}</script> values with which the model have higher likelihood <script type="math/tex">p(D|\mathbf{w},\beta, \mathcal{H})</script>, whereas the second term the minus <script type="math/tex">\text{KL}(q(\mathbf{w}|\lambda) \;\|\; p(\mathbf{w}|\alpha))</script> inspires the approximate prior <script type="math/tex">q(\mathbf{w}|\lambda)</script> to be less deviated from the given prior distribution <script type="math/tex">p(\mathbf{w}|\alpha)</script>.</p>
 
-<script type="math/tex; mode=display">\hat{x}</script>
-
 <h3 id="prediction-errors-as-probabilistic-interpretations">Prediction Errors as Probabilistic Interpretations</h3>
 
 <p>In Bayesian approach we make our assumptions on both likelihood and prior distributions. The likelihood distribution posits the model function form <script type="math/tex">f(\mathbf{x};\mathbf{w})</script> and the unexplained error level <script type="math/tex">\sigma_y^2 = 1/\beta</script>. The prior distribution has an assumed variance <script type="math/tex">\sigma_w^2 = 1/\alpha</script>.</p>
@@ -422,7 +424,7 @@ p(\mathbf{y} \mid \mathbf{w}, \mathbf{X}, \sigma_y^2, \mathcal{H})\\ &=
 $$
 -->
 
-<p>In general, when the set of features we can use in modeling are:</p>
+<p>In general, when the set of features used in modeling are:</p>
 <ul>
   <li>only the essential features
     <ul>
@@ -690,6 +692,13 @@ Setting $$g(Y_n,\mathbf{w})\equiv Y_n-\mu$$, $$W\equiv\Sigma$$, and taking the l
 }
 
 --->
+
+<h2 id="references">References</h2>
+<p>[1] https://eng.uber.com/pyro/</p>
+
+<p>[2]  https://www.facebook.com/yann.lecun/posts/10155003011462143</p>
+
+<p>[3] David MacKay. <em>Information Theory, Inference, and Learning Algorithms</em>.  http://www.inference.org.uk/mackay/Book.html</p>
 <div class="footnotes">
   <ol>
     <li id="fn:1">
@@ -717,6 +726,37 @@ Setting $$g(Y_n,\mathbf{w})\equiv Y_n-\mu$$, $$W\equiv\Sigma$$, and taking the l
 </article>
 
 <!-- Disqus -->
+
+<div class="comments">
+  
+
+  
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://hyungilahn.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+</div>
+
+
 
 
 <!-- Post navigation -->

@@ -4,8 +4,8 @@
     <title>Hyungil Ahn</title>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
-    <description>A website with blog posts and pages</description>
-    <pubDate>Wed, 04 Apr 2018 01:20:15 -0700</pubDate>
+    <description>deep probabilistic programming, bayesian deep learning</description>
+    <pubDate>Wed, 04 Apr 2018 12:54:35 -0700</pubDate>
     
       <item>
         <title>Deep Probabilistic Programming Combines Bayesian Inference and Deep Learning</title>
@@ -250,8 +250,6 @@ the prior &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid \sigma_w^2)&
 \big[
 \log p(D|\mathbf{w},\beta, \mathcal{H})]&lt;/script&gt; motivates the distribution &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w}|\lambda)&lt;/script&gt; to concentrate on the &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; values with which the model have higher likelihood &lt;script type=&quot;math/tex&quot;&gt;p(D|\mathbf{w},\beta, \mathcal{H})&lt;/script&gt;, whereas the second term the minus &lt;script type=&quot;math/tex&quot;&gt;\text{KL}(q(\mathbf{w}|\lambda) \;\|\; p(\mathbf{w}|\alpha))&lt;/script&gt; inspires the approximate prior &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w}|\lambda)&lt;/script&gt; to be less deviated from the given prior distribution &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w}|\alpha)&lt;/script&gt;.&lt;/p&gt;
 
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{x}&lt;/script&gt;
-
 &lt;h3 id=&quot;prediction-errors-as-probabilistic-interpretations&quot;&gt;Prediction Errors as Probabilistic Interpretations&lt;/h3&gt;
 
 &lt;p&gt;In Bayesian approach we make our assumptions on both likelihood and prior distributions. The likelihood distribution posits the model function form &lt;script type=&quot;math/tex&quot;&gt;f(\mathbf{x};\mathbf{w})&lt;/script&gt; and the unexplained error level &lt;script type=&quot;math/tex&quot;&gt;\sigma_y^2 = 1/\beta&lt;/script&gt;. The prior distribution has an assumed variance &lt;script type=&quot;math/tex&quot;&gt;\sigma_w^2 = 1/\alpha&lt;/script&gt;.&lt;/p&gt;
@@ -289,7 +287,7 @@ p(\mathbf{y} \mid \mathbf{w}, \mathbf{X}, \sigma_y^2, \mathcal{H})\\ &amp;=
 $$
 --&gt;
 
-&lt;p&gt;In general, when the set of features we can use in modeling are:&lt;/p&gt;
+&lt;p&gt;In general, when the set of features used in modeling are:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;only the essential features
     &lt;ul&gt;
@@ -557,6 +555,13 @@ Setting $$g(Y_n,\mathbf{w})\equiv Y_n-\mu$$, $$W\equiv\Sigma$$, and taking the l
 }
 
 ---&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+&lt;p&gt;[1] https://eng.uber.com/pyro/&lt;/p&gt;
+
+&lt;p&gt;[2]  https://www.facebook.com/yann.lecun/posts/10155003011462143&lt;/p&gt;
+
+&lt;p&gt;[3] David MacKay. &lt;em&gt;Information Theory, Inference, and Learning Algorithms&lt;/em&gt;.  http://www.inference.org.uk/mackay/Book.html&lt;/p&gt;
 &lt;div class=&quot;footnotes&quot;&gt;
   &lt;ol&gt;
     &lt;li id=&quot;fn:1&quot;&gt;
@@ -572,6 +577,253 @@ Setting $$g(Y_n,\mathbf{w})\equiv Y_n-\mu$$, $$W\equiv\Sigma$$, and taking the l
 &lt;/div&gt;
 </description>
         <pubDate>Mon, 15 Jan 2018 00:00:00 -0800</pubDate>
+      </item>
+    
+      <item>
+        <title>Deep and Hierarchical Implicit Models</title>
+        <link>/2018/01/10/temp.html</link>
+        <guid isPermaLink="true">/2018/01/10/temp.html</guid>
+        <description>&lt;p&gt;I’m excited to announce a paper that Rajesh Ranganath, Dave Blei, and
+I released today on arXiv, titled
+&lt;a href=&quot;https://arxiv.org/abs/1702.08896&quot;&gt;Deep and Hierarchical Implicit Models&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Implicit probabilistic models are all about sampling as a primitive:
+they define a process to simulate data and do not require tractable
+densities
+(&lt;a href=&quot;#diggle1984monte&quot;&gt;(Diggle &amp;amp; Gratton, 1984)&lt;/a&gt;,
+&lt;a href=&quot;#hartig2011statistical&quot;&gt;(Hartig, Calabrese, Reineking, Wiegand, &amp;amp; Huth, 2011)&lt;/a&gt;)
+. We leverage this fundamental idea to develop new classes of
+models: they encompass simulators in the scientific communities,
+generative adversarial networks
+&lt;a href=&quot;#goodfellow2014generative&quot;&gt;(Goodfellow et al., 2014)&lt;/a&gt;,
+and deep generative models such as sigmoid
+belief nets
+&lt;a href=&quot;#neal1990learning&quot;&gt;(Neal, 1990)&lt;/a&gt;
+and deep latent Gaussian models
+(&lt;a href=&quot;#rezende2014stochastic&quot;&gt;(Rezende, Mohamed, &amp;amp; Wierstra, 2014)&lt;/a&gt;,
+&lt;a href=&quot;#kingma2014autoencoding&quot;&gt;(Kingma &amp;amp; Welling, 2014)&lt;/a&gt;).
+These modeling developments could not really be done without
+inference, and we develop a variational inference algorithm that
+underpins them all.&lt;/p&gt;
+
+&lt;p&gt;Biased as I am, I think this is quite a dense paper—chock full of
+simple ideas that are rife with deep implications. There are many
+nuggets of wisdom that I could ramble on about, and I just might in
+separate blog posts.&lt;/p&gt;
+
+&lt;p&gt;As a practical example, we show how you can take any standard neural
+network and turn it into a deep implicit model: simply inject noise
+into the hidden layers. The hidden units in these layers are now
+interpreted as latent variables. Further, the induced latent variables
+are astonishingly flexible, going beyond Gaussians (or exponential
+families
+&lt;a href=&quot;#ranganath2015deep&quot;&gt;(Ranganath, Tang, Charlin, &amp;amp; Blei, 2015)&lt;/a&gt;)
+to arbitrary probability distributions. Deep generative modeling could
+not be any simpler!&lt;/p&gt;
+
+&lt;p&gt;Here’s a 2-layer deep implicit model in &lt;a href=&quot;http://edwardlib.org&quot;&gt;Edward&lt;/a&gt;.
+It defines the generative process,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{aligned}
+\mathbf{z}_{n,2} = g_2(\mathbf{\epsilon}_{n,2}),\qquad
+\mathbf{\epsilon}_{n, 2} \sim \text{Normal}(0, 1), \\
+\mathbf{z}_{n,1} = g_1(\mathbf{\epsilon}_{n,1}\mid\mathbf{z}_{n,2}),\qquad
+\mathbf{\epsilon}_{n, 1} \sim \text{Normal}(0, 1), \\
+\mathbf{x}_{n} = g_0(\mathbf{\epsilon}_{n,0}\mid\mathbf{z}_{n,1}),\qquad
+\mathbf{\epsilon}_{n, 0} \sim \text{Normal}(0, 1).
+\end{aligned}&lt;/script&gt;
+
+&lt;p&gt;This generates layers of latent variables &lt;script type=&quot;math/tex&quot;&gt;\mathbf{z}_{n,1}&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\mathbf{z}_{n,2}&lt;/script&gt; and data &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}_{n}&lt;/script&gt; via functions of noise &lt;script type=&quot;math/tex&quot;&gt;\mathbf{\epsilon}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;tensorflow&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;edward.models&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;keras.layers&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;55000&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# number of data points&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# noise dimensionality&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# random noise is Normal(0, 1)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;eps2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;eps1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;eps0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ones&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# alternate latent layers z with hidden layers h&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;z2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;activation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'relu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eps2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;activation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'relu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;z1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;activation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'relu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eps1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;128&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;activation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'relu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Dense&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;activation&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tf&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eps0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;h1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The model uses Keras, where &lt;code class=&quot;highlighter-rouge&quot;&gt;Dense(256)(x)&lt;/code&gt; denotes a fully connected
+layer with &lt;script type=&quot;math/tex&quot;&gt;256&lt;/script&gt; hidden units applied to input &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;. To define a
+stochastic layer, we concatenate noise with the previous layer. The
+model alternates between stochastic and deterministic layers to
+generate data points &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}_n\in\mathbb{R}^{10}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Check out the paper for how you can work with, or even interpret, such a model.&lt;/p&gt;
+
+&lt;p&gt;EDIT (2017/03/02): The algorithm is now &lt;a href=&quot;https://github.com/blei-lab/edward/pull/491&quot;&gt;merged into Edward&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;ol class=&quot;bibliography&quot;&gt;&lt;li&gt;&lt;span id=&quot;diggle1984monte&quot;&gt;Diggle, P. J., &amp;amp; Gratton, R. J. (1984). Monte Carlo methods of inference for implicit statistical models. &lt;i&gt;Journal of the Royal Statistical Society Series B&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;hartig2011statistical&quot;&gt;Hartig, F., Calabrese, J. M., Reineking, B., Wiegand, T., &amp;amp; Huth, A. (2011). Statistical inference for stochastic simulation models - theory and application. &lt;i&gt;Ecology Letters&lt;/i&gt;, &lt;i&gt;14&lt;/i&gt;(8), 816–827.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;goodfellow2014generative&quot;&gt;Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., … Bengio, Y. (2014). Generative Adversarial Nets. In &lt;i&gt;Neural Information Processing Systems&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;neal1990learning&quot;&gt;Neal, R. M. (1990). &lt;i&gt;Learning Stochastic Feedforward Networks&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;rezende2014stochastic&quot;&gt;Rezende, D. J., Mohamed, S., &amp;amp; Wierstra, D. (2014). Stochastic Backpropagation and Approximate Inference in Deep Generative Models. In &lt;i&gt;International Conference on Machine Learning&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;kingma2014autoencoding&quot;&gt;Kingma, D. P., &amp;amp; Welling, M. (2014). Auto-Encoding Variational Bayes. In &lt;i&gt;International Conference on Learning Representations&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span id=&quot;ranganath2015deep&quot;&gt;Ranganath, R., Tang, L., Charlin, L., &amp;amp; Blei, D. M. (2015). Deep Exponential Families. In &lt;i&gt;Artificial Intelligence and Statistics&lt;/i&gt;.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+</description>
+        <pubDate>Wed, 10 Jan 2018 00:00:00 -0800</pubDate>
+      </item>
+    
+      <item>
+        <title>Random Thoughts</title>
+        <link>/2018/01/05/random-thoughts.html</link>
+        <guid isPermaLink="true">/2018/01/05/random-thoughts.html</guid>
+        <description>&lt;p&gt;We should consider the deep learning framework as 
+new style of programming&lt;/p&gt;
+</description>
+        <pubDate>Fri, 05 Jan 2018 00:00:00 -0800</pubDate>
+      </item>
+    
+      <item>
+        <title>Sample post</title>
+        <link>/2014/11/30/sample-post.html</link>
+        <guid isPermaLink="true">/2014/11/30/sample-post.html</guid>
+        <description>&lt;p&gt;Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
+  &lt;li&gt;Donec a diam lectus&lt;/li&gt;
+  &lt;li&gt;Sed sit amet ipsum mauris&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.&lt;/p&gt;
+
+&lt;p&gt;Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula &lt;em&gt;semper consectetur sagittis&lt;/em&gt;, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.&lt;/p&gt;
+
+&lt;p&gt;Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt.&lt;/p&gt;
+
+&lt;p&gt;Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. Aliquam ut massa in turpis dapibus convallis. Praesent elit lacus, vestibulum at malesuada et, ornare et est. Ut augue nunc, sodales ut euismod non, adipiscing vitae orci. Mauris ut placerat justo. Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices egestas quis ut quam. Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. Cras quis ligula sem, vel elementum mi. Phasellus non ullamcorper urna.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Nov 2014 00:00:00 -0800</pubDate>
+      </item>
+    
+      <item>
+        <title>Feature images</title>
+        <link>/2014/11/29/feature-images.html</link>
+        <guid isPermaLink="true">/2014/11/29/feature-images.html</guid>
+        <description>&lt;p&gt;This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 29 Nov 2014 00:00:00 -0800</pubDate>
+      </item>
+    
+      <item>
+        <title>Markdown and HTML</title>
+        <link>/2014/11/28/markdown-and-html.html</link>
+        <guid isPermaLink="true">/2014/11/28/markdown-and-html.html</guid>
+        <description>&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
+
+&lt;p&gt;Tables have also been extended from Markdown:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;First Header&lt;/th&gt;
+      &lt;th&gt;Second Header&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Content Cell&lt;/td&gt;
+      &lt;td&gt;Content Cell&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Content Cell&lt;/td&gt;
+      &lt;td&gt;Content Cell&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Here’s an example of an image, which is included using Markdown:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/img/sample_feature_img_2.png&quot; alt=&quot;Geometric pattern with fading gradient&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Highlighting for code in Jekyll is done using Pygments or Rouge. This theme makes use of Rouge by default.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// count to ten&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// count to twenty&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Type Theme uses KaTeX to display maths. Equations such as &lt;script type=&quot;math/tex&quot;&gt;S_n = a \times \frac{1-r^n}{1-r}&lt;/script&gt; can be displayed inline.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, they can be shown on a new line:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) = \int \frac{2x^2+4x+6}{x-2}&lt;/script&gt;
+</description>
+        <pubDate>Fri, 28 Nov 2014 00:00:00 -0800</pubDate>
+      </item>
+    
+      <item>
+        <title>Introducing Lanyon</title>
+        <link>/2014/01/02/introducing-lanyon.html</link>
+        <guid isPermaLink="true">/2014/01/02/introducing-lanyon.html</guid>
+        <description>&lt;p&gt;Lanyon is an unassuming &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; theme that places content first by tucking away navigation in a hidden drawer. It’s based on &lt;a href=&quot;http://getpoole.com&quot;&gt;Poole&lt;/a&gt;, the Jekyll butler.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;built-on-poole&quot;&gt;Built on Poole&lt;/h3&gt;
+
+&lt;p&gt;Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by &lt;a href=&quot;https://twitter.com/mdo&quot;&gt;@mdo&lt;/a&gt;. Poole, and every theme built on it (like Lanyon here) includes the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Complete Jekyll setup included (layouts, config, &lt;a href=&quot;/404&quot;&gt;404&lt;/a&gt;, &lt;a href=&quot;/atom.xml&quot;&gt;RSS feed&lt;/a&gt;, posts, and &lt;a href=&quot;/about&quot;&gt;example page&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Mobile friendly design and development&lt;/li&gt;
+  &lt;li&gt;Easily scalable text and component sizing with &lt;code class=&quot;highlighter-rouge&quot;&gt;rem&lt;/code&gt; units in the CSS&lt;/li&gt;
+  &lt;li&gt;Support for a wide gamut of HTML elements&lt;/li&gt;
+  &lt;li&gt;Related posts (time-based, because Jekyll) below each post&lt;/li&gt;
+  &lt;li&gt;Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;lanyon-features&quot;&gt;Lanyon features&lt;/h3&gt;
+
+&lt;p&gt;In addition to the features of Poole, Lanyon adds the following:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Toggleable sliding sidebar (built with only CSS) via &lt;strong&gt;☰&lt;/strong&gt; link in top corner&lt;/li&gt;
+  &lt;li&gt;Sidebar includes support for textual modules and a dynamically generated navigation with active link support&lt;/li&gt;
+  &lt;li&gt;Two orientations for content and sidebar, default (left sidebar) and &lt;a href=&quot;https://github.com/poole/lanyon#reverse-layout&quot;&gt;reverse&lt;/a&gt; (right sidebar), available via &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/poole/lanyon#themes&quot;&gt;Eight optional color schemes&lt;/a&gt;, available via &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt; classes&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/poole/lanyon#readme&quot;&gt;Head to the readme&lt;/a&gt; to learn more.&lt;/p&gt;
+
+&lt;h3 id=&quot;browser-support&quot;&gt;Browser support&lt;/h3&gt;
+
+&lt;p&gt;Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.&lt;/p&gt;
+
+&lt;h3 id=&quot;download&quot;&gt;Download&lt;/h3&gt;
+
+&lt;p&gt;Lanyon is developed on and hosted with GitHub. Head to the &lt;a href=&quot;https://github.com/poole/lanyon&quot;&gt;GitHub repository&lt;/a&gt; for downloads, bug reports, and features requests.&lt;/p&gt;
+
+&lt;p&gt;Thanks!&lt;/p&gt;
+</description>
+        <pubDate>Thu, 02 Jan 2014 00:00:00 -0800</pubDate>
       </item>
     
   </channel>
