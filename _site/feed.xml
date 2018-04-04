@@ -1,102 +1,577 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Type Theme</title>
+    <title>Hyungil Ahn</title>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description>A website with blog posts and pages</description>
-    <pubDate>Tue, 02 Jan 2018 13:59:33 -0800</pubDate>
+    <pubDate>Wed, 04 Apr 2018 01:20:15 -0700</pubDate>
     
       <item>
-        <title>Sample post</title>
-        <link>/2014/11/30/sample-post.html</link>
-        <guid isPermaLink="true">/2014/11/30/sample-post.html</guid>
-        <description>&lt;p&gt;Consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem.&lt;/p&gt;
+        <title>Deep Probabilistic Programming Combines Bayesian Inference and Deep Learning</title>
+        <link>/2018/01/15/deep-prob-modeling.html</link>
+        <guid isPermaLink="true">/2018/01/15/deep-prob-modeling.html</guid>
+        <description>&lt;p&gt;&lt;em&gt;Deep probabilistic programming&lt;/em&gt; is a method of implementing “Bayesian” probabilistic modeling on “differentiable” deep learning frameworks. This provides a style of language to define complex (composite, hierarchical) models with multiple components and incorporate probabilistic uncertainty about latent variables or model parameters into predictions.&lt;/p&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;Consectetur adipiscing elit&lt;/li&gt;
-  &lt;li&gt;Donec a diam lectus&lt;/li&gt;
-  &lt;li&gt;Sed sit amet ipsum mauris&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Deep probabilistic programming can be characterized by approximate Bayesian inference &lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; (calculating the approximate posterior probability distribution of latent variables or model parameters by incorporating the information from the observed data) on differentiable programming (parametric optimization by deep learning). Thus, I think that deep probabilistic programming can be also called “Bayesian differentiable programming”.&lt;/p&gt;
 
-&lt;p&gt;Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.&lt;/p&gt;
-
-&lt;p&gt;Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula &lt;em&gt;semper consectetur sagittis&lt;/em&gt;, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum.&lt;/p&gt;
-
-&lt;p&gt;Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.&lt;/p&gt;
+&lt;p&gt;Uber’s Pyro framework emphasizes the following four characteristics of deep probabilistic programming.&lt;/p&gt;
 
 &lt;blockquote&gt;
-  &lt;p&gt;Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Why probabilistic modeling? To correctly capture uncertainty in models and predictions for unsupervised and semi-supervised learning, and to provide AI systems with declarative prior knowledge.&lt;/li&gt;
+    &lt;li&gt;Why (universal) probabilistic programs? To provide a clear and high-level, but complete, language for specifying complex models.&lt;/li&gt;
+    &lt;li&gt;Why deep probabilistic models? To learn generative knowledge from data and reify knowledge of how to do inference.&lt;/li&gt;
+    &lt;li&gt;Why inference by optimization? To enable scaling to large data and leverage advances in modern optimization and variational inference.&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt.&lt;/p&gt;
+&lt;h4 id=&quot;why-deep-and-differentiable-programming&quot;&gt;Why Deep and Differentiable Programming?&lt;/h4&gt;
 
-&lt;p&gt;Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. Aliquam ut massa in turpis dapibus convallis. Praesent elit lacus, vestibulum at malesuada et, ornare et est. Ut augue nunc, sodales ut euismod non, adipiscing vitae orci. Mauris ut placerat justo. Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices egestas quis ut quam. Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. Cras quis ligula sem, vel elementum mi. Phasellus non ullamcorper urna.&lt;/p&gt;
+&lt;p&gt;Deep learning frameworks (e.g., PyTorch, TensorFlow, MxNet) enable defining a target model in a &lt;em&gt;deep&lt;/em&gt; and composite network structure assembling the building blocks of component models (= parametric linear or non-linear functions including neural nets) that run in data-dependent, procedural and conditional manner. Each component may be based on different sets of feature variables. Also, they provide a tool to estimate the model parameters in terms of &lt;em&gt;differentiable&lt;/em&gt; optimization like stochastic gradient decent (SGD) and back-propagation algorithms.&lt;/p&gt;
+
+&lt;p&gt;Yann LeCun earlier made good points on &lt;em&gt;differentiable programming&lt;/em&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Differentiable Programming is little more than a rebranding of the modern collection Deep Learning techniques, the same way Deep Learning was a rebranding of the modern incarnations of neural nets with more than two layers. But the important point is that people are now building a new kind of software by assembling networks of parameterized functional blocks and by training them from examples using some form of gradient-based optimization. An increasingly large number of people are defining the network procedurally in a data-dependant way (with loops and conditionals), allowing them to change dynamically as a function of the input data fed to them. It’s really very much like a regular progam, except it’s parameterized, automatically differentiated, and trainable/optimizable. Dynamic networks have become increasingly popular (particularly for NLP), thanks to deep learning frameworks that can handle them such as PyTorch and Chainer (note: our old deep learning framework Lush could handle a particular kind of dynamic nets called Graph Transformer Networks, back in 1994. It was needed for text recognition).”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Since Bayesian modeling is based on a probabilistic model of the generative process relating the observed data with the uncertain latent variables (= generating parameters), it is very desirable to have the representational power of a deep and composite network model to sufficiently describe the potentially complex generative processes with multiple input variables. In addition, the exact calculation of the posterior distribution of latent variables requires doing the integral calculation to obtain the evidence of the observed data with the assumed prior distribtuion, so this is intractable in most problems. Thus, we need approximate Bayesian inference techniques, such as variational inference (VI). Thankfully, VI transforms the approximate posterior inference problems into the optimization problems searching for the best hyperparameters of approximate posterior distribution (often assumed to be Gaussian distributions). We will discuss it in detail below.&lt;/p&gt;
+
+&lt;!---
+RNN time-sequence modeling + Bayesian
+---&gt;
+
+&lt;h4 id=&quot;why-bayesian-inference&quot;&gt;Why Bayesian Inference?&lt;/h4&gt;
+
+&lt;p&gt;Bayesian probabilistic modeling provides a unified scheme on how to update the uncertain information (or infer the posterior distributions) about modeling parameters or latent variables using observed data. It also assumes the specification of generative processes (or model functions describing how outputs are produced from inputs) and prior distributions of modeling parameters or latent variables. This specification allows for easy incorporation of prior knowledge into the model form and associated parameter uncertainty.&lt;/p&gt;
+
+&lt;p&gt;Although the initial choice of compared models and associated prior distributions may depend on our domain knowledge about the underlying problems, bayesian reasoning provides an objective scheme to compare different models and priors.&lt;/p&gt;
+
+&lt;p&gt;Bayesian modeling allows us to build more robust and less overfitted models under uncertainty and predict probabilistic estimates about target variables in the model. By incorporating the known form of a physics-based equation describing the potental causal relationships of variables in the underlying phenomenon into our modeling and set the priors on the model parameters, we can build a heuristically reasonable, more generalizable and updatable model with insufficient data.&lt;/p&gt;
+
+&lt;p&gt;It sounds all good and simple, but a key difficulty in Bayesian probabilistic modeling arises from calculating the posterior distributions for a given complicated model structure and prior. It is very often intractable to compute the “exact” posterior distribution, but the variational inference (VI), one of the important methods in deep probabilistic programming, present a commonly-applicable approach to compute the “approximate” bayesian posterior.&lt;/p&gt;
+
+&lt;p&gt;Since VI transforms Bayesian posterior inference problems (i.e., learning uncertain modeling parameters or latent variables) into optimization problems, the SGD optimization in underlying deep learning frameworks can solve the posterior inference problems.&lt;/p&gt;
+
+&lt;h4 id=&quot;deep-probabilistic-programming--bayesian-differentiable-programming&quot;&gt;Deep Probabilistic Programming = Bayesian Differentiable Programming&lt;/h4&gt;
+
+&lt;p&gt;Compared to non-probabilistic deep learning frameworks &lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; that aim to make “deterministic” models for point-estimate predictions, &lt;em&gt;deep probabilistic programming&lt;/em&gt; frameworks enables us to 1) specify “probabilistic” models involving the uncertain distributions of model parameters or latent variables, 2) provide approximate Bayesian inferences (e.g., variational inferences) using the powerful stochastic gradient decent algorithms of the original deep learning. Thus, deep probabilistic programming naturally integrates the benefits of bayesian modeling and deep learning.&lt;/p&gt;
+
+&lt;h4 id=&quot;application-bayesian-regression-with-a-parametric-function-eg-knowledge-based-known-function-form-nns&quot;&gt;&lt;em&gt;Application&lt;/em&gt;: Bayesian Regression with a Parametric Function (e.g., knowledge-based known function form, NNs)&lt;/h4&gt;
+
+&lt;p&gt;In Bayesian modeling we posit that the model parameters (a.k.a. latent or hidden variables) generating the observed data are &lt;em&gt;uncertain&lt;/em&gt; in our knowledge. Thus, our information about the true values of &lt;em&gt;generating&lt;/em&gt; variables is described by a probability. That is, we use a probability to denote our uncertainty about the hidden variables selected to describe the generating process.&lt;/p&gt;
+
+&lt;p&gt;Suppose we have a dataset &lt;script type=&quot;math/tex&quot;&gt;D = ({\mathbf{X}, \mathbf{y}}) = \{(\mathbf{x}_i,y_i) \mid i=1,2,...,N\}&lt;/script&gt; where each data point has feature input vector &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}_i\in\mathbb{R}^K&lt;/script&gt; and observed output variable &lt;script type=&quot;math/tex&quot;&gt;y_i\in\mathbb{R}.&lt;/script&gt; ​The goal of Bayesian regression is to fit a function to the data: &lt;script type=&quot;math/tex&quot;&gt;y = f(\mathbf{x}; \mathbf{w} ) + \epsilon&lt;/script&gt; assuming that &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; is the &lt;em&gt;uncertain&lt;/em&gt; latent variables described by a probability distribution.&lt;/p&gt;
+
+&lt;!---
+Let's take the example of a Bayesian parametric regression such as
+$$y = f(\mathbf{x}; \mathbf{w}) + \epsilon $$ where $$\mathbf{x}$$ and $$y$$ are the given input vector and the observed output variable (scalar), and $$\mathbf{w}$$ is the *uncertain* latent variables (vector) or the generating parameters described by a probability distribution.
+---&gt;
+
+&lt;p&gt;There are important modeling assumptions here.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;f(\mathbf{x}; \mathbf{w})&lt;/script&gt; is an assumed generating function we specify with unexplained error &lt;script type=&quot;math/tex&quot;&gt;\epsilon \sim \mathrm{Normal}(0, \sigma_y^2)&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;script type=&quot;math/tex&quot;&gt;f(\mathbf{x}; \mathbf{w})&lt;/script&gt; is a deterministic function for any sampled value of &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w} \sim \mathrm{Normal} (\mathbf{0}, \sigma_w^2 \mathbf{I})&lt;/script&gt;. The function &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; may be any known form of an equation or a neural network involving the model parameters &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt;.&lt;/li&gt;
+  &lt;li&gt;The level of &lt;script type=&quot;math/tex&quot;&gt;\sigma_y^2&lt;/script&gt; is assumed to be fixed as a constant value and also related to how accurately we may specify our function &lt;script type=&quot;math/tex&quot;&gt;f(\mathbf{x}; \mathbf{w})&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Whereas a non-Bayesian (deterministic) approach views &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; as a fixed variable to be estimated, a Bayesian (probabilistic) approach regards &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; as an uncertain variable whose &lt;em&gt;probability distribution&lt;/em&gt; is to be estimated to explain the observed data. Maximum likelihood (ML) or maximum a posteriori (MAP) estimations are well-known non-Bayesian approaches determining a fixed &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now let’s represent the above Bayesian regression in terms of probability distributions.&lt;/p&gt;
+
+&lt;p&gt;In the Bayesian perspective the complete generative process should be always described in the joint probability distribution of &lt;em&gt;all observed and latent variables&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}&lt;/script&gt; is given and &lt;script type=&quot;math/tex&quot;&gt;\sigma_y^2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\sigma_w^2&lt;/script&gt; are known and  fixed, the joint distribution for the complete generative process is &lt;script type=&quot;math/tex&quot;&gt;p(y,\mathbf{w} \mid \mathbf{x}, \sigma_y^2, \sigma_w^2, \mathcal{H})&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;\mathcal{H}&lt;/script&gt; denotes the hypothesis space of model form &lt;script type=&quot;math/tex&quot;&gt;y = f(\mathbf{x} ; \mathbf{w}) + \epsilon&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Factorizing &lt;script type=&quot;math/tex&quot;&gt;p(y,\mathbf{w} \mid \mathbf{x}, \sigma_y^2, \sigma_w^2, \mathcal{H}) = p(y \mid \mathbf{w},
+\mathbf{x}, \sigma_y^2, \mathcal{H}) p(\mathbf{w} \mid \sigma_w^2)&lt;/script&gt;, we represent the complete generative process in the combination of the likelihood and the prior distributions. It is important to note that the exact forms of the likelihood and the prior distributions are part of our modeling assumptions.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;em&gt;likelihood&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;p(y \mid \mathbf{w}, \mathbf{x}, \sigma_y^2, \mathcal{H})&lt;/script&gt; is our assumed probability model to describe a generating process of the observed variable &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; from a sample of latent variables &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt;. Assuming that the likelihood is normally distributed with &lt;script type=&quot;math/tex&quot;&gt;f(\mathbf{x}; \mathbf{w})&lt;/script&gt; as &lt;script type=&quot;math/tex&quot;&gt;\mu_y&lt;/script&gt; (= the expected value of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;) and &lt;script type=&quot;math/tex&quot;&gt;\sigma_y^2&lt;/script&gt; as the Gaussian noise level,
+&lt;script type=&quot;math/tex&quot;&gt;\begin{aligned}
+y \sim p(y \mid \mathbf{w}, \mathbf{x}, \sigma_y^2,\mathcal{H}) = \mathrm{Normal}(\mu_y, \sigma_y^2 ) = \mathrm{Normal}(f(\mathbf{x}; \mathbf{w}), \sigma_y^2 ).
+\end{aligned}&lt;/script&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that a known deterministic physical model &lt;script type=&quot;math/tex&quot;&gt;\mu_y = f(\mathbf{x}; \mathbf{w})&lt;/script&gt; can be easily incorporated into the likelihood.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The &lt;em&gt;prior&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid \sigma_w^2)&lt;/script&gt; is our assumed probability model to represent the uncertain information of latent variables &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; (= model parameters) before we consider the observed data &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;.
+&lt;script type=&quot;math/tex&quot;&gt;\mathbf{w} \sim p(\mathbf{w} \mid \sigma_w^2) = \mathrm{Normal} (\mathbf{0},\sigma_w^2 \mathbf{I})&lt;/script&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bayesian posterior inference is to update our probabilistic information about &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; after observing the data &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; and considering the likelihood.  Mathematically the Bayes’ rule (a.k.a. inverse probability) provides this update rule and the posterior distribution representing the uncertainty about &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; is computed as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\begin{aligned}
+p(\mathbf{w}| \mathbf{y}, \mathbf{X}, \sigma_y^2,\sigma_w^2,\mathcal{H})
+= \frac{ p(\mathbf{y} \mid \mathbf{w},
+\mathbf{X}, \sigma_y^2, \mathcal{H}) p(\mathbf{w} \mid \sigma_w^2)} { p(\mathbf{y} \mid \mathbf{X}, \sigma_y^2,\sigma_w^2, \mathcal{H}) }
+= \frac{ p(\mathbf{y} \mid \mathbf{w},
+\mathbf{X}, \sigma_y^2, \mathcal{H}) p(\mathbf{w} \mid \sigma_w^2)} { \int p(\mathbf{y} \mid \mathbf{w},
+\mathbf{X}, \sigma_y^2, \mathcal{H}) p(\mathbf{w} \mid \sigma_w^2)  \,\mathrm{d} \mathbf{w} }.
+\end{aligned}&lt;/script&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\mathrm{Posterior}&lt;/script&gt; = &lt;script type=&quot;math/tex&quot;&gt;\frac{\mathrm{Likelihood} \times \mathrm{Prior} }{\mathrm{Evidence}}&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;em&gt;evidence&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{y} \mid \mathbf{X}, \sigma_y^2,\sigma_w^2,\mathcal{H})&lt;/script&gt; is the normalizing constant of the posterior distribution and should be calculated to obtain the exact posterior distribution &lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;. It is the probability that the model observes the data with the assumed likelihood and the prior distributions. Note that it is also the marginalized probability of &lt;em&gt;likelihood &lt;script type=&quot;math/tex&quot;&gt;\times&lt;/script&gt; prior&lt;/em&gt; over the uncertain parameters &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt;.
+Since this is intractable to be exactly calculated, we involve an approximate Bayesian inference such as variational inference (VI) or Markov chain Monte Carlo (MCMC).&lt;/p&gt;
+
+&lt;!---
+$$p(y \mid \mathbf{x}, \sigma_y^2)
+= \int p(y, \mathbf{w} |
+\mathbf{x}, \sigma_y^2) \,\mathrm{d} \mathbf{w}
+= \int p(y \mid \mathbf{w},
+\mathbf{x}, \sigma_y^2) p(\mathbf{w} \mid \sigma_w^2)  \,\mathrm{d} \mathbf{w}$$.
+---&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;p(\mathbf{y} \mid \mathbf{X}, \sigma_y^2,\sigma_w^2,\mathcal{H})
+= \int p(\mathbf{y}, \mathbf{w} |
+\mathbf{X}, \sigma_y^2,\sigma_w^2,\mathcal{H}) \,\mathrm{d} \mathbf{w}
+= \int p(\mathbf{y} \mid \mathbf{w},
+\mathbf{X}, \sigma_y^2,\mathcal{H}) p(\mathbf{w} \mid \sigma_w^2)  \,\mathrm{d} \mathbf{w}&lt;/script&gt;
+
+&lt;p&gt;Importantly, the Bayesian prediction of &lt;script type=&quot;math/tex&quot;&gt;y'&lt;/script&gt; for a new &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}'&lt;/script&gt; is essentially the marginalization of &lt;em&gt;likelihood &lt;script type=&quot;math/tex&quot;&gt;\times&lt;/script&gt; posterior&lt;/em&gt; over the uncertain parameters &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt;, incorporating the &lt;em&gt;posterior&lt;/em&gt; uncertainty about parameters &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; into predictions.
+&lt;!---
+$$p(y' \mid \mathbf{x}', y, \mathbf{x}, \sigma_y^2, \sigma_w^2)
+ = \int p(y' \mid \mathbf{w},
+\mathbf{x}', \sigma_y^2) p(\mathbf{w} \mid y, \mathbf{x}, \sigma_y^2, \sigma_w^2)  \,\mathrm{d} \mathbf{w}$$.
+---&gt;
+&lt;script type=&quot;math/tex&quot;&gt;p(y' \mid \mathbf{x}', \mathbf{y}, \mathbf{X}, \sigma_y^2, \sigma_w^2,\mathcal{H})
+ = \int p(y' \mid \mathbf{w},
+\mathbf{x}', \sigma_y^2,\mathcal{H}) p(\mathbf{w} \mid \mathbf{y}, \mathbf{X}, \sigma_y^2, \sigma_w^2,\mathcal{H})  \,\mathrm{d} \mathbf{w}&lt;/script&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;variational-inference&quot;&gt;Variational Inference&lt;/h3&gt;
+
+&lt;p&gt;For simpler notations, we define the &lt;em&gt;generating parameters&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;\theta = (\sigma_y^2, \sigma_w^2) = (1/\beta, 1/\alpha)&lt;/script&gt;. Note that &lt;script type=&quot;math/tex&quot;&gt;\beta = 1/\sigma_y^2&lt;/script&gt; posits the likelihood variance (or unexplained error level) and &lt;script type=&quot;math/tex&quot;&gt;\alpha = 1/\sigma_w^2&lt;/script&gt; posits the prior variance (or model parameter uncertainty).  Now we can denote
+the prior &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid \sigma_w^2)&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid
+\alpha)&lt;/script&gt; and the posteror &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid \mathbf{y}, \mathbf{X}, \sigma_y^2, \sigma_w^2, \mathcal{H})&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid D, \theta,  \mathcal{H})&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;The prior distribution: &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid \alpha) = p(\mathbf{w} \mid \sigma_w^2)&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;The posterior distribution: &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid D, \theta,  \mathcal{H})&lt;/script&gt; = &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid \mathbf{y}, \mathbf{X}, \sigma_y^2, \sigma_w^2, \mathcal{H})&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;The aim of variational inference is to approximate the posterior &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w} \mid D, \theta, \mathcal{H})&lt;/script&gt; by a simpler probability distribution &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w} \mid \lambda) = \mathrm{Normal} (\mathbf{\lambda}_{\mu},
+\mathrm{diag}( {\lambda_\sigma^{-1}} ))&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; is called the &lt;em&gt;variational parameters&lt;/em&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  \lambda^* &amp;= \arg\min_\lambda \text{KL}(
+  q(\mathbf{w}|\lambda)
+  \;\|\;
+  p(\mathbf{w}|D,\theta, \mathcal{H})
+  )
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  \text{KL}(
+  q(\mathbf{w}|\lambda)
+  \;\|\;
+  p(\mathbf{w}|D,\theta, \mathcal{H})
+  ) &amp;=
+  \mathbb{E}_{q(\mathbf{w}|\lambda)}
+  \big[
+  \log q(\mathbf{w}|\lambda)-
+  \log p(\mathbf{w}|D,\theta, \mathcal{H})
+  \big]\\ &amp;=
+  \mathbb{E}_{q(\mathbf{w}|\lambda)}
+  \big[
+  \log q(\mathbf{w}|\lambda)-
+  \log \frac{p(\mathbf{w},D|\theta, \mathcal{H})}{p(D|\theta, \mathcal{H})}
+  \big]\\ &amp;=
+  \mathbb{E}_{q(\mathbf{w}|\lambda)}
+  \big[
+  \log q(\mathbf{w}|\lambda)-
+  \log p(\mathbf{w},D|\theta, \mathcal{H})
+  \big] + \log p(D|\theta, \mathcal{H})\\ &amp;
+  \geq 0
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Therefore,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+  \log p(D|\theta, \mathcal{H}) &amp;=
+  \mathbb{E}_{q(\mathbf{w}|\lambda)}
+  \big[
+  \log p(\mathbf{w},D|\theta, \mathcal{H}) - \log q(\mathbf{w}|\lambda)
+  \big] +
+  \text{KL}(
+    q(\mathbf{w}|\lambda)
+    \;\|\;
+    p(\mathbf{w}|D,\theta, \mathcal{H})
+    ) \\ &amp;
+\geq \mathbb{E}_{q(\mathbf{w}|\lambda)}
+\big[
+\log p(\mathbf{w},D|\theta, \mathcal{H}) - \log q(\mathbf{w}|\lambda)
+\big]
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Note that the log evidence &lt;script type=&quot;math/tex&quot;&gt;\log p(D|\theta, \mathcal{H})&lt;/script&gt; is lower-bounded because &lt;script type=&quot;math/tex&quot;&gt;\text{KL}(
+  q(\mathbf{w}|\lambda)
+  \;\|\;
+  p(\mathbf{w}|D,\theta, \mathcal{H})
+)&lt;/script&gt; is always greater than 0. The lower bound &lt;script type=&quot;math/tex&quot;&gt;\mathbb{E}_{q(\mathbf{w}|\lambda)}
+\big[
+\log p(\mathbf{w},D|\theta, \mathcal{H}) - \log q(\mathbf{w}|\lambda)
+\big]&lt;/script&gt; is called the &lt;em&gt;Evidence Lower Bound (ELBO)&lt;/em&gt; or the &lt;em&gt;variational free energy&lt;/em&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\log p(D|\theta, \mathcal{H})&lt;/script&gt; is fixed for a given &lt;script type=&quot;math/tex&quot;&gt;\theta&lt;/script&gt; (prior variance &lt;script type=&quot;math/tex&quot;&gt;\sigma_w^2&lt;/script&gt; and likelihood variance &lt;script type=&quot;math/tex&quot;&gt;\sigma_y^2&lt;/script&gt;) and the  hypothesis space &lt;script type=&quot;math/tex&quot;&gt;\mathcal{H}&lt;/script&gt; of the model function form &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;, the maximization of ELBO by adjusting the &lt;em&gt;variational parameters&lt;/em&gt; &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; (or &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w}|\lambda)&lt;/script&gt;) minimizes &lt;script type=&quot;math/tex&quot;&gt;\text{KL}(
+  q(\mathbf{w}|\lambda)
+  \;\|\;
+  p(\mathbf{w}|D,\theta, \mathcal{H})
+)&lt;/script&gt;, which makes the approximate posterior distribution &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w}|\lambda)&lt;/script&gt; closer to the true posterior distribution &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w}|D,\theta, \mathcal{H})&lt;/script&gt;. Also, note that when ELBO is maximized up to the log evidence &lt;script type=&quot;math/tex&quot;&gt;\log p(D|\theta, \mathcal{H})&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\text{KL}(q||p)&lt;/script&gt; becomes 0, making the approxmiate posterior &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w}|\lambda)&lt;/script&gt; the same as the exact posterior &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w}|D,\theta, \mathcal{H})&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;The existence of ELBO transforms the posterior inference problem into the optmization problem, which can be solved using the minus ELBO as the loss function of SGD algorithm in DL frameworks. In addition, ELBO can be represented in a different way to clarify how the approximate posterior distribution of parameters &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w} \mid \lambda)&lt;/script&gt; shaped by &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; reckons the balance between the likelihood and the prior.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+\text{ELBO}(\lambda) &amp; = \mathbb{E}_{q(\mathbf{w}|\lambda)}
+\big[
+\log p(\mathbf{w},D|\theta, \mathcal{H}) - \log q(\mathbf{w}|\lambda)
+\big] \\&amp; =
+\mathbb{E}_{q(\mathbf{w}|\lambda)}
+\big[
+\log p(D|\mathbf{w},\theta, \mathcal{H}) p(\mathbf{w}|\theta) - \log q(\mathbf{w}|\lambda)
+\big] \\&amp; =
+\mathbb{E}_{q(\mathbf{w}|\lambda)}
+\big[
+\log p(D|\mathbf{w},\beta, \mathcal{H}) p(\mathbf{w}|\alpha) - \log q(\mathbf{w}|\lambda)
+\big] \\&amp; =
+\mathbb{E}_{q(\mathbf{w}|\lambda)}
+\big[
+\log p(D|\mathbf{w},\beta, \mathcal{H}) - \log \frac{q(\mathbf{w}|\lambda)}{ p(\mathbf{w}|\alpha)}
+\big] \\&amp; =
+\mathbb{E}_{q(\mathbf{w}|\lambda)}
+\big[
+\log p(D|\mathbf{w},\beta, \mathcal{H})] - \text{KL}(q(\mathbf{w}|\lambda) \;\|\; p(\mathbf{w}|\alpha))
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The first term &lt;script type=&quot;math/tex&quot;&gt;\mathbb{E}_{q(\mathbf{w}|\lambda)}
+\big[
+\log p(D|\mathbf{w},\beta, \mathcal{H})]&lt;/script&gt; motivates the distribution &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w}|\lambda)&lt;/script&gt; to concentrate on the &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; values with which the model have higher likelihood &lt;script type=&quot;math/tex&quot;&gt;p(D|\mathbf{w},\beta, \mathcal{H})&lt;/script&gt;, whereas the second term the minus &lt;script type=&quot;math/tex&quot;&gt;\text{KL}(q(\mathbf{w}|\lambda) \;\|\; p(\mathbf{w}|\alpha))&lt;/script&gt; inspires the approximate prior &lt;script type=&quot;math/tex&quot;&gt;q(\mathbf{w}|\lambda)&lt;/script&gt; to be less deviated from the given prior distribution &lt;script type=&quot;math/tex&quot;&gt;p(\mathbf{w}|\alpha)&lt;/script&gt;.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\hat{x}&lt;/script&gt;
+
+&lt;h3 id=&quot;prediction-errors-as-probabilistic-interpretations&quot;&gt;Prediction Errors as Probabilistic Interpretations&lt;/h3&gt;
+
+&lt;p&gt;In Bayesian approach we make our assumptions on both likelihood and prior distributions. The likelihood distribution posits the model function form &lt;script type=&quot;math/tex&quot;&gt;f(\mathbf{x};\mathbf{w})&lt;/script&gt; and the unexplained error level &lt;script type=&quot;math/tex&quot;&gt;\sigma_y^2 = 1/\beta&lt;/script&gt;. The prior distribution has an assumed variance &lt;script type=&quot;math/tex&quot;&gt;\sigma_w^2 = 1/\alpha&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Importantly, the Bayesian prediction of &lt;script type=&quot;math/tex&quot;&gt;y'&lt;/script&gt; for a new &lt;script type=&quot;math/tex&quot;&gt;\mathbf{x}'&lt;/script&gt; is essentially the marginalization of &lt;em&gt;likelihood &lt;script type=&quot;math/tex&quot;&gt;\times&lt;/script&gt; posterior&lt;/em&gt; over the uncertain parameters &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt;, incorporating the &lt;em&gt;posterior&lt;/em&gt; uncertainty about parameters &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; into predictions.&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{aligned}
+p(y' \mid \mathbf{x}', D, \theta,\mathcal{H}) &amp;=
+\int p(y' \mid \mathbf{w},
+\mathbf{x}', \sigma_y^2,\mathcal{H}) \; q(\mathbf{w} \mid \lambda)  \,\mathrm{d} \mathbf{w} \\ &amp;=
+\int \frac{1}{\sqrt{(2\pi)} \sigma_y}\exp(-\frac{1}{2 \sigma_y^2} \sum_{i=1}^N (y'_i - f(\mathbf{x}'_i; \mathbf{w}) )^2) \\ &amp; \frac{1}{\sqrt{(2\pi)^K} \sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}} } \exp\big(- \frac{(\mathbf{w} - \mu_{q(\mathbf{\mathbf{w} \mid \lambda)} })^2}{2 {\sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}}}^2  } \big) \,\mathrm{d} \mathbf{w} \\ &amp;=
+\int \frac{1}{Z_D(\beta)}\exp(-\beta E_D) \frac{1}{Z_W(\alpha)}\exp(-\alpha E_W)\,\mathrm{d} \mathbf{w}
+\end{aligned} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;First, &lt;script type=&quot;math/tex&quot;&gt;\beta E_D = \frac{1}{2 \sigma_y^2} \sum_{i=1}^N (y'_i - f(\mathbf{x}'_i; \mathbf{w})^2 ) = \frac{1}{2\sigma_y^2} \sum_{i=1}^N \epsilon_i^2  = \frac{1}{2\sigma_y^2} \sum_{i=1}^N (n_i^2 + e_i^2) = \frac{N}{2}(1 + \frac{\sigma_{\mathrm{bias}}^2}{\sigma_y^2})&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;Note that the unexplained error &lt;script type=&quot;math/tex&quot;&gt;\epsilon_i = y'_i - f(\mathbf{x}'_i;\mathbf{w})&lt;/script&gt; = &lt;script type=&quot;math/tex&quot;&gt;t_i + n_i - f(\mathbf{x}'_i;\mathbf{w})&lt;/script&gt; = &lt;script type=&quot;math/tex&quot;&gt;n_i + (t_i - f(\mathbf{x}'_i;\mathbf{w}))&lt;/script&gt; = &lt;script type=&quot;math/tex&quot;&gt;n_i + e_i&lt;/script&gt;, since &lt;script type=&quot;math/tex&quot;&gt;y'_i = t_i + n_i&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;t_i&lt;/script&gt; is the hidden true value (before a noise is being added) and &lt;script type=&quot;math/tex&quot;&gt;n_i&lt;/script&gt; is the inherent noise. Also, &lt;script type=&quot;math/tex&quot;&gt;e_i = t_i - f(\mathbf{x}'_i;\mathbf{w})&lt;/script&gt; is the misspecified model bias error, &lt;script type=&quot;math/tex&quot;&gt;\sigma_{\mathrm{bias}} ^2 = \frac{1}{N}\sum_{i=1}^N e_i^2&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\sigma_y ^2 = \frac{1}{N}\sum_{i=1}^N n_i^2&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thus, the likelihood for a given &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; is shaped by both the misspecified model bias error and the inherent error. As the ratio of the ratio &lt;script type=&quot;math/tex&quot;&gt;\frac{\sigma_{\mathrm{bias}}^2}{\sigma_y^2}&lt;/script&gt; goes up, the likelihood goes down. In addition, the normalizing factor &lt;script type=&quot;math/tex&quot;&gt;\frac{1}{\sqrt{(2\pi)} \sigma_y}&lt;/script&gt; decreases the likelihood with higher &lt;script type=&quot;math/tex&quot;&gt;\sigma_y&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Second, the term &lt;script type=&quot;math/tex&quot;&gt;\alpha E_W = \frac{(\mathbf{w} - \mu_{q(\mathbf{\mathbf{w} \mid \lambda)} })^2}{2 {\sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}}}^2 }&lt;/script&gt; where &lt;script type=&quot;math/tex&quot;&gt;\alpha = \frac{1}{2 {\sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}}}^2 }&lt;/script&gt; put different weights over &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; values. That is, &lt;script type=&quot;math/tex&quot;&gt;\mathbf{\mathbf{w}}&lt;/script&gt; closer to the current prior mean &lt;script type=&quot;math/tex&quot;&gt;\mu_{q(\mathbf{\mathbf{w} \mid \lambda)} }&lt;/script&gt; is more weighted, allowing for the tendency toward a smaller deviation from the current prior. In particular, when &lt;script type=&quot;math/tex&quot;&gt;\mu_{q(\mathbf{\mathbf{w} \mid \lambda)} } \simeq 0&lt;/script&gt;, &lt;script type=&quot;math/tex&quot;&gt;\;\; \alpha E_W \simeq \frac{\alpha}{2} \mid \mathbf{w} \mid ^2&lt;/script&gt; corresponds to a regularization term preferring small values of &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w}&lt;/script&gt; decreasing the tendency of overfitting and higher &lt;em&gt;model parameter uncertainty&lt;/em&gt; (= &lt;em&gt;model variance error&lt;/em&gt;).&lt;/p&gt;
+
+&lt;!--
+The likelihood for a given $$\mathbf{w}$$ can be also described in terms of the inherent noise error (the *irreducible* error due to the random nature of the underlying system or the observation process) and the model bias error (e.g., model misspecification).
+
+$$
+\begin{aligned}
+p(D|\mathbf{w},\beta, \mathcal{H}) &amp;=
+p(\mathbf{y} \mid \mathbf{w}, \mathbf{X}, \sigma_y^2, \mathcal{H})\\ &amp;=
+\textstyle\prod_{i=1}^N \; p(y_i \mid \mathbf{w}, \mathbf{x}_i, \sigma_y^2, \mathcal{H})
+= \textstyle\prod_{i=1}^N \;\mathrm{Normal}(y_i ; f(\mathbf{x}_i; \mathbf{w}), \sigma_y^2 ) \\ &amp;=
+\frac{1}{Z_D(\beta)}\exp(-\frac{\beta}{2} \sum_{i=1}^N (y_i - f(\mathbf{x}_i; \mathbf{w}))^2)
+\end{aligned}
+$$
+--&gt;
+
+&lt;p&gt;In general, when the set of features we can use in modeling are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;only the essential features
+    &lt;ul&gt;
+      &lt;li&gt;we tend to obtain a generalizable model with a good fit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;all essential features + many irrelevant features
+    &lt;ul&gt;
+      &lt;li&gt;too complicated model (overfit) and high model variance (model parameter uncertainty)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;insufficient essential features
+    &lt;ul&gt;
+      &lt;li&gt;too simple model (underfit) and high model bias (model misspecification)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;insufficient essential features + many irrelevant features
+    &lt;ul&gt;
+      &lt;li&gt;non-generalizable model with a bad fit&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;!---
+$$p(y' \mid \mathbf{x}', y, \mathbf{x}, \sigma_y^2, \sigma_w^2)
+ = \int p(y' \mid \mathbf{w},
+\mathbf{x}', \sigma_y^2) p(\mathbf{w} \mid y, \mathbf{x}, \sigma_y^2, \sigma_w^2)  \,\mathrm{d} \mathbf{w}$$.
+---&gt;
+
+    &lt;!--
+When the posterior $$p(\mathbf{w} \mid D, \theta, \mathcal{H})$$ is approxmiated by $$q(\mathbf{w} \mid \lambda)$$, the predicted $$y'$$ for a new $$\mathbf{x}'$$ has the distribution
+
+$$
+\begin{aligned}
+p(y' \mid \mathbf{x}', D, \theta,\mathcal{H}) &amp;=
+\int p(y' \mid \mathbf{w},
+\mathbf{x}', \sigma_y^2,\mathcal{H}) \; q(\mathbf{w} \mid \lambda)  \,\mathrm{d} \mathbf{w} \\ &amp; \simeq
+p(y' \mid \mathbf{w}_\mathrm{MP},
+\mathbf{x}', \sigma_y^2,\mathcal{H}) \; q(\mathbf{w}_\mathrm{MP} \mid \lambda) \sqrt{\frac{(2\pi)^K}{\det A}}
+\end{aligned}
+$$
+
+by Laplace's approximation method (ref: Pages 341, 350 in David MacKay's book).
+
+
+When we denote the updated posterior by
+$$ q(\mathbf{w} \mid \lambda') \propto p(y' \mid \mathbf{w}, \mathbf{x}', \sigma_y^2,\mathcal{H}) \; q(\mathbf{w} \mid \lambda)$$, in the above equation, $$\mathbf{w_\mathrm{MP}}= \arg \displaystyle\max_{\mathbf{w}} \log q(\mathbf{w} \mid \lambda') = \arg \displaystyle\max_{\mathbf{w}} \log \big(p(y' \mid \mathbf{w}, \mathbf{x}', \sigma_y^2, \mathcal{H}) \; q(\mathbf{w} \mid \lambda)\big)$$.
+
+$$A$$ is the inverse covariance matrix of $$q(\mathbf{w} \mid \lambda')$$.
+
+$$A = - \nabla \nabla \log q(\mathbf{w} \mid \lambda') = \mathrm{diag}({\lambda'_\sigma})
+$$ where $$ \lambda' = (\lambda'_\mu, \lambda'_\sigma)$$
+
+$$\det A = \Pi_{k=1}^{K} {\lambda'_{\sigma,k}}$$
+
+Since $$\det A$$ is inversely proportional to the multiplication of all dimensional variances of posterior $$q(\mathbf{w} \mid \lambda')$$, the term $$\frac{1}{\sqrt{\det A}}$$ is proportional to the multiplication of all dimensional standard deviations of $$q(\mathbf{w} \mid \lambda')$$. For simpler notations, let's define $$\sigma_{q(\mathbf{\mathbf{w} \mid \lambda')}}$$ = $$\frac{1}{\sqrt{\det A}}= \frac{1}{\sqrt{\Pi_{k=1}^{K} {\lambda'_{\sigma,k}}}}$$. Similarly, for the current posterior $$q(\mathbf{w} \mid \lambda) = q(\mathbf{w} \mid \lambda_\mu, \mathrm{diag}(\lambda_\sigma^{-1}))$$, we define $$\mu_{q(\mathbf{\mathbf{w} \mid \lambda)}} = \lambda_\mu$$, $$\sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}} = \frac{1}{\sqrt{\Pi_{k=1}^{K} {\lambda_{\sigma,k}}}}$$.
+
+$$
+\begin{aligned}
+p(y' \mid \mathbf{x}', D, \theta,\mathcal{H}) \simeq
+\sqrt{(2\pi)^K} p(y' \mid \mathbf{w}_\mathrm{MP},
+\mathbf{x}', \sigma_y^2,\mathcal{H}) \; q(\mathbf{w}_\mathrm{MP} \mid \lambda) \sigma_{q(\mathbf{\mathbf{w} \mid \lambda')}}
+\end{aligned}
+$$
+
+$$q(\mathbf{w}_\mathrm{MP} \mid \lambda) =
+\frac{1}{\sqrt{(2\pi)^K} \sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}} } \exp\big(- \frac{(\mathbf{w}_\mathrm{MP} - \mu_{q(\mathbf{\mathbf{w} \mid \lambda)} })^2}{2 {\sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}}}^2  } \big)
+$$
+
+
+
+$$
+\begin{aligned}
+p(y' \mid \mathbf{x}', D, \theta,\mathcal{H}) \simeq
+ p(y' \mid \mathbf{w}_\mathrm{MP},
+\mathbf{x}', \sigma_y^2,\mathcal{H}) \;
+\exp\big(- \frac{(\mathbf{w}_\mathrm{MP} - \mu_{q(\mathbf{\mathbf{w} \mid \lambda)} })^2}{2 {\sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}}}^2  } \big)
+\frac{\sigma_{q(\mathbf{\mathbf{w} \mid \lambda')}}}{\sigma_{q(\mathbf{\mathbf{w} \mid \lambda)}} }
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+p(y' \mid \mathbf{w}_\mathrm{MP}, \mathbf{x}', \sigma_y^2, \mathcal{H}) &amp;=
+\textstyle\prod_{i=1}^N \; p(y'_i \mid \mathbf{w}_\mathrm{MP}, \mathbf{x}'_i, \sigma_y^2, \mathcal{H})
+= \textstyle\prod_{i=1}^N \;\mathrm{Normal}(y'_i ; f(\mathbf{x}'_i; \mathbf{w}_\mathrm{MP}), \sigma_y^2 ) \\ &amp;=
+\frac{1}{Z_D(\beta)}\exp(-\frac{\beta}{2} \sum_{i=1}^N (y'_i - f(\mathbf{x}'_i; \mathbf{w}_\mathrm{MP}))^2) \\ &amp;=
+\frac{1}{Z_D(\beta)}\exp(-\beta E_{D|\mathbf{w}_\mathrm{MP}})
+\end{aligned}
+$$
+
+
+Alternatively,
+---&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--
+Again, the Bayesian approach uses a probability to measure the degree of uncertainty of the variables.
+
+the prior distribution is a Bayesian subjective probability of describing our knowledge about $$\mathbf{w}$$ in an objective fashion.
+
+
+is only described by a *subjective* probability. That is,
+
+the probabilistic model is a generative process describing how latent variables
+
+For example, when observation $$y$$ is assumed to be generated depending on model parameters $$\mathbf{w}$$, we can describe the overall generative process by *joint distribution* $$p(y, \mathbf{w}) = p(y \mid \mathbf{w} ) p(\mathbf{w})$$.  Here, $$p(\mathbf{w})$$ is the Bayesian specification about the
+
+
+the prior information about the value of $$\mathbf{w}$$ before observing $$y$$ may be viewed as Bayesian subjective probability of describing our best knowledge about $$\mathbf{w}$$ in an objective fashion.
+
+In addition, the likelihood probability $$p(y \mid \mathbf{w})$$ assumes a generating process of observation y for a given $$\mathbf{w}$$.  In other words, both prior and likelihood requires modeling assumptions in terms of their forms.
+
+
+
+
+
+
+
+Deep Learning (frameworks) as a style of computational modeling language to design a composite (hybrid) model of simple building blocks and optimize them in differentiable computation (backprop &amp; SGDs).  This is now called “Differentiable Programming”.
+
+
+
+A deep probabilistic programming framework (e.g., Pyro, Edward) is an extended deep learning framework (e.g., PyTorch, TensorFlow) enabling probabilistic model specifications and Bayesian inferences.
+
+
+---&gt;
+
+&lt;!---
+
+Let's use Pyro to illustrate how to perform Bayesian regression with a known function form.
+
+
+Suppose we’re given a dataset $$D$$ of the form
+$$D = {(X_i,y_i)}$$ for $$i=1,2,...,N$$
+The goal of regression is to fit a function to the data of the form:
+
+$$y_i = f(X_i; \mathbf{w} ) + \epsilon $$
+
+Note that function $$f$$ can be any known form of deterministic equation or neural network involving the uncertain parameter $$\mathbf{w} $$.
+
+
+Let’s first implement regression in PyTorch and learn point estimates for the parameters $$\mathbf{w}. Then we’ll see how to incorporate uncertainty into our estimates by using Pyro to implement Bayesian regression.
+
+#### Setup
+
+```python
+N = 100  # size of toy data
+p = 1    # number of features
+
+def build_linear_dataset(N, noise_std=0.1):
+    X = np.linspace(-6, 6, num=N)
+    y = 3 * X + 1 + np.random.normal(0, noise_std, size=N)
+    X, y = X.reshape((N, 1)), y.reshape((N, 1))
+    X, y = Variable(torch.Tensor(X)), Variable(torch.Tensor(y))
+    return torch.cat((X, y), 1)
+```
+
+- specify model (prior, likelihood)
+
+
+
+
+- specify inference (form of approximated posterior or variational posterior)
+
+
+
+Why probabilistic modeling? To correctly capture uncertainty in models and predictions for unsupervised and semi-supervised learning, and to provide AI systems with declarative prior knowledge.
+
+Why (universal) probabilistic programs? To provide a clear and high-level, but complete, language for specifying complex models.
+
+Why deep probabilistic models? To learn generative knowledge from data and reify knowledge of how to do inference.
+
+Why inference by optimization? To enable scaling to large data and leverage advances in modern optimization and variational inference.
+
+
+
+
+ enables Pyro programs to include stochastic control structure, that is, random choices in a Pyro program can control the presence of other random ... To enable scaling to large data and leverage advances in modern optimization and variational inference.
+
+
+
+---&gt;
+
+&lt;!---
+
+Let $$Y_1,\ldots,Y_N$$ be $$(d+1)$$-dimensional observations (collecting the $$X_n\in\mathbb{R}^d$$ covariate within each $$Y_n\in\mathbb{R}$$ response for shorthand) generated from some model with unknown parameters $$\mathbf{w}\in\mathbf{w}$$.
+
+__Goal__: Find the &quot;true&quot; parameters $$\mathbf{w}^* \in\mathbf{w}$$.
+
+__Intuition__: The idea is to find a set of $$k$$ constraints, or &quot;moments&quot;, involving the parameters $$\mathbf{w}$$. What makes GMMs nice is that you need no information per say about how the model depends on $$\mathbf{w}$$. Certainly they can be used to construct moments (special case: maximum likelihood estimation (MLE)), but one can use, for example, statistical moments (special case: method of moments (MoM)) as the constraints. Analogously, tensor decompositions are used in the case of spectral methods.
+
+More formally, the $$k$$ __moment conditions__ for a vector-valued function $$g(Y,\cdot):\mathbf{w}\to\mathbb{R}^k$$ is
+
+\[
+m(\mathbf{w}^* ) \equiv \mathbb{E}[g(Y,\mathbf{w}^* )] = 0_{k\times 1},
+\]
+
+where $$0_{k\times 1}$$ is the $$k\times 1$$ zero vector.
+
+As we cannot analytically derive the expectation for arbitrary $$g$$, we use the sample moments instead:
+
+\[
+\hat m(\mathbf{w}) \equiv \frac{1}{N}\sum_{n=1}^N g(Y_n,\mathbf{w})
+\]
+
+By the Law of Large Numbers, $$\hat{m}(\mathbf{w})\to m(\mathbf{w})$$, so the problem is thus to find the $$\mathbf{w}$$ which sets $$\hat m(\mathbf{w})$$ to zero.
+
+Cases:
+
+* $$\mathbf{w}\supset\mathbb{R}^k$$, i.e., there are more parameters than moment
+conditions: The model is not [identifiable](http://en.wikipedia.org/wiki/Identifiability). This is the standard scenario in ordinary least squares (OLS) when there are more covariates than observations and so no unique set of parameters $$\mathbf{w}$$ exist. Solve this by simply constructing more moments!
+* $$\mathbf{w}=\mathbb{R}^k$$: There exists a unique solution.
+* $$\mathbf{w}\subset\mathbb{R}^k$$,
+i.e., there are fewer parameters than moment conditions: The parameters are overspecified and the best we can do is to minimize $$m(\mathbf{w})$$ instead of solve $$m(\mathbf{w})=0$$.
+
+Consider the last scenario: we aim to minimize $$\hat m(\mathbf{w})$$ in some way, say $$\|\hat m(\mathbf{w})\|$$ for some choice of $$\|\cdot\|$$. We define the __weighted norm__ as
+
+$$
+\|\hat m(\mathbf{w})\|_W^2 \equiv \hat m(\mathbf{w})^T W \hat m(\mathbf{w}),
+$$
+
+where $$W$$ is a positive definite matrix.
+
+The __generalized method of moments__ (GMMs) procedure is to find
+
+$$
+\hat\mathbf{w} = {arg\ min}_{\mathbf{w}\in\mathbf{w}}
+\left(\frac{1}{N}\sum_{n=1}^N g(Y_n,\mathbf{w})\right)^T W
+\left(\frac{1}{N}\sum_{n=1}^N g(Y_n,\mathbf{w})\right)
+$$
+
+Note that while the motivation is for $$\mathbf{w}\supset\mathbb{R}^k$$, by the unique solution, this is guaranteed to work for $$\mathbf{w}=\mathbb{R}^k$$ too. Hence it is a _generalized_ method of moments.
+
+__Theorem__. Under standard assumptions¹, the estimator $$\hat\mathbf{w}$$ is [consistent](http://en.wikipedia.org/wiki/Consistent_estimator#Bias_versus_consistency) and [asymptotically normal](http://en.wikipedia.org/wiki/Asymptotic_distribution). Furthermore, if
+
+$$
+W \propto
+\Omega^{-1}\equiv\mathbb{E}[g(Y_n,\mathbf{w}^*)g(Y_n,\mathbf{w}^*)^T]^{-1}
+$$
+
+then $$\hat \mathbf{w}$$ is [asymptotically optimal](http://en.wikipedia.org/wiki/Efficiency_(statistics)), i.e., achieves the Cramér-Rao lower bound.
+
+Note that $$\Omega$$ is the covariance matrix of $$g(Y_n,\mathbf{w}^*)$$ and $$\Omega^{-1}$$ the precision. Thus the GMM weights the parameters of the estimator $$\hat\mathbf{w}$$ depending on how much &quot;error&quot; remains in $$g(Y,\cdot)$$ per parameter of $$\mathbf{w}^*$$ (that is, how far away $$g(Y,\cdot)$$ is from 0).
+
+I haven't seen anyone make this remark before, but the GMM estimator can also be viewed as minimizing a log-normal quantity. Recall that the multivariate normal distribution is proportional to
+
+$$
+\exp\Big((Y_n-\mu)^T\Sigma^{-1}(Y_n-\mu)\Big)
+$$
+
+Setting $$g(Y_n,\mathbf{w})\equiv Y_n-\mu$$, $$W\equiv\Sigma$$, and taking the log, this is exactly the expression for the GMM! By the asymptotic normality, this explains why would want to set $$W\equiv\Sigma$$ in order to achieve statistical efficiency.
+
+¹ The standard assumptions can be found in [1]. In practice they will almost always be satisfied, e.g., compact parameter space, $$g$$ is continuously differentiable in a neighborhood of $$\mathbf{w}^*$$, output of $$g$$ is never infinite, etc.
+
+
+## References
+[1] Alastair Hall. _Generalized Method of Moments (Advanced Texts in Econometrics)_. Oxford University Press, 2005.
+
+
+@inproceedings{tran2017deep,
+  author = {Dustin Tran and Matthew D. Hoffman and Rif A. Saurous and Eugene Brevdo and Kevin Murphy and David M. Blei},
+  title = {Deep probabilistic programming},
+  booktitle = {International Conference on Learning Representations},
+  year = {2017}
+}
+
+---&gt;
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Learning the probability distributions of model parameters or latent variables is called &lt;em&gt;inference&lt;/em&gt; in probabilistic modeling. Bayesian inference often involves approximating posterior distributions, since the exact calculations are often intractable. In parameterized models, variational inference (VI) approximate the posterior distributions through optimization (differential programming). &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;Non-probabilistic deep learning models do not assume the uncertainty in model parameters (e.g., weights in NN). &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;Compared to the Bayesian approach requiring the estimation of the evidence and the &lt;em&gt;posterior distribution&lt;/em&gt;, the maximum a posteriori (MAP) estimation simply considers the point parameter estimate &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w_\mathrm{MP}}&lt;/script&gt; maximizing the numerator part of the posterior (= Likelihood &lt;script type=&quot;math/tex&quot;&gt;\times&lt;/script&gt; Prior). &lt;script type=&quot;math/tex&quot;&gt;\mathbf{w_\mathrm{MP}}= \arg \displaystyle\max_{\mathbf{w}} \log \big(p(\mathbf{y} \mid \mathbf{W}, \mathbf{X}, \sigma_y^2, \mathcal{H}) p(\mathbf{w} \mid \sigma_w^2)\big)&lt;/script&gt; &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
 </description>
-        <pubDate>Sun, 30 Nov 2014 00:00:00 -0800</pubDate>
-      </item>
-    
-      <item>
-        <title>Feature images</title>
-        <link>/2014/11/29/feature-images.html</link>
-        <guid isPermaLink="true">/2014/11/29/feature-images.html</guid>
-        <description>&lt;p&gt;This is an example of a post which includes a feature image specified in the front matter of the post. The feature image spans the full-width of the page, and is shown with the title on permalink pages.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 29 Nov 2014 00:00:00 -0800</pubDate>
-      </item>
-    
-      <item>
-        <title>Markdown and HTML</title>
-        <link>/2014/11/28/markdown-and-html.html</link>
-        <guid isPermaLink="true">/2014/11/28/markdown-and-html.html</guid>
-        <description>&lt;p&gt;Jekyll supports the use of &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt; with inline HTML tags which makes it easier to quickly write posts with Jekyll, without having to worry too much about text formatting. A sample of the formatting follows.&lt;/p&gt;
-
-&lt;p&gt;Tables have also been extended from Markdown:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;First Header&lt;/th&gt;
-      &lt;th&gt;Second Header&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-      &lt;td&gt;Content Cell&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Here’s an example of an image, which is included using Markdown:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/img/sample_feature_img_2.png&quot; alt=&quot;Geometric pattern with fading gradient&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Highlighting for code in Jekyll is done using Pygments or Rouge. This theme makes use of Rouge by default.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// count to ten&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;c1&quot;&gt;// count to twenty&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Type Theme uses KaTeX to display maths. Equations such as &lt;script type=&quot;math/tex&quot;&gt;S_n = a \times \frac{1-r^n}{1-r}&lt;/script&gt; can be displayed inline.&lt;/p&gt;
-
-&lt;p&gt;Alternatively, they can be shown on a new line:&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) = \int \frac{2x^2+4x+6}{x-2}&lt;/script&gt;
-</description>
-        <pubDate>Fri, 28 Nov 2014 00:00:00 -0800</pubDate>
+        <pubDate>Mon, 15 Jan 2018 00:00:00 -0800</pubDate>
       </item>
     
   </channel>
