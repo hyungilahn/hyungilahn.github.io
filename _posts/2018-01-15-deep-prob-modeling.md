@@ -15,9 +15,7 @@ Uber's Pyro framework emphasizes the following four characteristics of deep prob
 >- Why (universal) probabilistic programs? To provide a clear and high-level, but complete, language for specifying complex models.
 >- Why deep probabilistic models? To learn generative knowledge from data and reify knowledge of how to do inference.
 >- Why inference by optimization? To enable scaling to large data and leverage advances in modern optimization and variational inference.
-
 [^1]: Learning the probability distributions of model parameters or latent variables is called *inference* in probabilistic modeling. Bayesian inference often involves approximating posterior distributions, since the exact calculations are often intractable. In parameterized models, variational inference (VI) approximate the posterior distributions through optimization (differential programming).
-
 
 #### Why Deep and Differentiable Programming?
 
