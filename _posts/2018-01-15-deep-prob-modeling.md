@@ -258,8 +258,6 @@ The first term $$\mathbb{E}_{q(\mathbf{w}|\lambda)}
 \big[
 \log p(D|\mathbf{w},\beta, \mathcal{H})]$$ motivates the distribution $$q(\mathbf{w}|\lambda)$$ to concentrate on the $$\mathbf{w}$$ values with which the model have higher likelihood $$p(D|\mathbf{w},\beta, \mathcal{H})$$, whereas the second term the minus $$ \text{KL}(q(\mathbf{w}|\lambda) \;\|\; p(\mathbf{w}|\alpha))$$ inspires the approximate prior $$q(\mathbf{w}|\lambda)$$ to be less deviated from the given prior distribution $$p(\mathbf{w}|\alpha)$$.
 
-$$\hat{x}$$
-
 ### Prediction Errors as Probabilistic Interpretations
 
 In Bayesian approach we make our assumptions on both likelihood and prior distributions. The likelihood distribution posits the model function form $$f(\mathbf{x};\mathbf{w})$$ and the unexplained error level $$\sigma_y^2 = 1/\beta$$. The prior distribution has an assumed variance $$\sigma_w^2 = 1/\alpha$$.
