@@ -263,9 +263,9 @@ p(y' \mid \mathbf{x}', D, \theta,\mathcal{H}) &=
 \end{aligned}
 $$
 
-First, $$\beta E_D = \frac{1}{2 \sigma_y^2} \sum_{i=1}^N (y'_i - f(\mathbf{x}'_i; \mathbf{w})^2 ) = \frac{1}{2\sigma_y^2} \sum_{i=1}^N \epsilon_i^2  = \frac{1}{2\sigma_y^2} \sum_{i=1}^N (n_i^2 + e_i^2) = \frac{N}{2}(1 + \frac{\sigma_{\mathrm{bias}}^2}{\sigma_y^2})$$
+First, $$\beta E_D = \frac{1}{2 \sigma_y^2} \sum_{i=1}^N (y'_i - f(\mathbf{x}'_i; \mathbf{w})^2 ) = \frac{1}{2\sigma_y^2} \sum_{i=1}^N \epsilon_i^2  = \frac{1}{2\sigma_y^2} \sum_{i=1}^N (n_i^2 + e_i^2) = \frac{N}{2}(\frac{\sigma_n^2 + \sigma_{\mathrm{bias}}^2}{\sigma_y^2})$$
 
-Note that the unexplained error $$\epsilon_i = y'_i - f(\mathbf{x}'_i;\mathbf{w})$$ = $$t_i + n_i - f(\mathbf{x}'_i;\mathbf{w})$$ = $$n_i + (t_i - f(\mathbf{x}'_i;\mathbf{w}))$$ = $$n_i + e_i$$, since $$y'_i = t_i + n_i $$ where $$t_i$$ is the hidden true value (before a noise is being added) and $$n_i$$ is the inherent noise. Also, $$e_i = t_i - f(\mathbf{x}'_i;\mathbf{w})$$ is the misspecified model bias error, $$\sigma_{\mathrm{bias}} ^2 = \frac{1}{N}\sum_{i=1}^N e_i^2$$ and $$\sigma_y ^2 = \frac{1}{N}\sum_{i=1}^N n_i^2$$.
+Note that the unexplained error $$\epsilon_i = y'_i - f(\mathbf{x}'_i;\mathbf{w})$$ = $$t_i + n_i - f(\mathbf{x}'_i;\mathbf{w})$$ = $$n_i + (t_i - f(\mathbf{x}'_i;\mathbf{w}))$$ = $$n_i + e_i$$, since $$y'_i = t_i + n_i $$ where $$t_i$$ is the hidden true value (before a noise is being added) and $$n_i$$ is the inherent noise. Also, $$e_i = t_i - f(\mathbf{x}'_i;\mathbf{w})$$ is the misspecified model bias error, $$\sigma_{\mathrm{bias}} ^2 = \frac{1}{N}\sum_{i=1}^N e_i^2$$ and $$\sigma_n ^2 = \frac{1}{N}\sum_{i=1}^N n_i^2$$.
 
 Thus, the likelihood for a given $$\mathbf{w}$$ is shaped by both the misspecified model bias error and the inherent error. As the ratio of the ratio $$\frac{\sigma_{\mathrm{bias}}^2}{\sigma_y^2}$$ goes up, the likelihood goes down. In addition, the normalizing factor $$\frac{1}{\sqrt{(2\pi)} \sigma_y}$$ decreases the likelihood with higher $$\sigma_y$$.
 
@@ -290,7 +290,7 @@ $$
 In general, when the set of features used in modeling are:
   * only the essential features
     - we tend to obtain a generalizable model with a good fit
-  * all essential features + many irrelevant features
+  * essential features + many irrelevant features
     - too complicated model (overfit) and high model variance (model parameter uncertainty)
   * insufficient essential features
     - too simple model (underfit) and high model bias (model misspecification)
