@@ -551,8 +551,8 @@ Setting $$g(Y_n,\mathbf{w})\equiv Y_n-\mu$$, $$W\equiv\Sigma$$, and taking the l
 --->
 
 ## References
-[1] https://eng.uber.com/pyro/
+[1] Uber Pyro (https://eng.uber.com/pyro/)
 
-[2]  https://www.facebook.com/yann.lecun/posts/10155003011462143
+[2] Yann Lecun's post (https://www.facebook.com/yann.lecun/posts/10155003011462143)
 
 [3] David MacKay. _Information Theory, Inference, and Learning Algorithms_.  http://www.inference.org.uk/mackay/Book.html
